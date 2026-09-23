@@ -1,0 +1,17 @@
+{
+  "name": "pre-entrega-9-hernandez-grau-micaela",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass scss/main.scss styles/styles.css --no-source-map",
+    "test": "npm run build:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.104.0"
+  }
+}
