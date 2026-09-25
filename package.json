@@ -13,5 +13,8 @@
   "type": "commonjs",
   "devDependencies": {
     "sass": "^1.104.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
   }
 }
