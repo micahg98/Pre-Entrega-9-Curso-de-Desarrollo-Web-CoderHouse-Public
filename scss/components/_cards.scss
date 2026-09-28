@@ -235,6 +235,10 @@
       flex-direction: column;
       gap: $space-lg;
       padding: $space-2xl;
+
+      @media (min-width: $breakpoint-tablet) {
+        flex: 1;
+      }
     }
 
     .btn-primary {

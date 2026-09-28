@@ -13,13 +13,29 @@
 .pagina-servicios {
   main {
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
 
     ul { list-style: none; }
+
+    > .seccion-contenedor {
+      grid-column: 1 / -1;
+    }
 
     > .card {
       align-self: center;
       width: min($service-card-width, 100%);
       margin-inline: auto;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      > .card {
+        align-self: stretch;
+        width: 100%;
+        margin-inline: 0;
+      }
     }
   }
 
@@ -63,41 +79,56 @@
 
 .pagina-inicio {
   main {
-    text-align: center;
+    text-align: left;
+  }
 
-    .seccion-contenedor.seccion-presentacion-inicio {
-      display: grid;
-      grid-template-areas:
-        "titulo"
-        "foto"
-        "texto1"
-        "texto2";
-      grid-template-columns: 1fr;
-    }
+  .inicio-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-3xl;
 
-    .seccion-presentacion-inicio {
-      > .titulo-secundario { grid-area: titulo; text-align: center; }
-      > .foto-presentacion { grid-area: foto; justify-self: center; }
-
-      > div {
-        display: contents;
-
-        > p:nth-of-type(1) { grid-area: texto1; }
-        > p:nth-of-type(2) { grid-area: texto2; }
-      }
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) minmax(0, 1fr);
+      align-items: start;
+      gap: $space-2xl;
     }
   }
 
-  .seccion-contenedor { text-align: center; }
-  .seccion-servicios-inicio { text-align: center; }
-
   .seccion-presentacion-inicio {
-    > .titulo-secundario { text-align: center; }
-    > div > p { text-align: center; }
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    min-width: 0;
 
-    > .foto-presentacion {
-      width: min($presentation-image-home-width, $presentation-image-home-max-width);
+    > .titulo-secundario {
+      align-self: center;
+      margin: 0;
+      text-align: center;
+    }
+
+    .texto-presentacion-inicio {
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+      text-align: center;
+
+      > p:first-child { font-size: $font-size-md; }
+    }
+  }
+
+  .foto-presentacion {
+    width: min($presentation-image-home-width, $presentation-image-home-max-width);
+    margin: 0;
+    justify-self: start;
+
+    > img {
+      width: 40%;
       margin-inline: auto;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      width: 100%;
+      max-width: none;
     }
   }
 
@@ -158,14 +189,21 @@ main {
 .seccion-servicios-inicio {
   align-self: stretch;
   width: 100%;
-  order: 2;
-  text-align: center;
+  min-width: 0;
+  text-align: left;
 
   article {
     display: flex;
     flex-direction: column;
     gap: $space-lg;
-    padding: $space-xl;
+    padding: 0;
+    text-align: center;
+
+    > .titulo-secundario {
+      align-self: center;
+      margin: 0;
+      text-align: center;
+    }
   }
 
   ul {
@@ -176,7 +214,11 @@ main {
     list-style: none;
   }
 
-  li { font-weight: $font-weight-card; }
+  li {
+    font-weight: $font-weight-card;
+
+    > .titulo-secundario { font-size: $font-size-tertiary; }
+  }
 }
 
 .seccion-presentacion-inicio { order: 1; text-align: center; }

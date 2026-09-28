@@ -269,13 +269,6 @@ main {
     transform: translateY(0);
   }
 }
-.pagina-inicio main .titulo-secundario {
-  animation: home-title-reveal 1.2s ease both;
-}
-.pagina-inicio main .seccion-servicios-inicio .titulo-secundario {
-  animation-delay: 0.12s;
-}
-
 @keyframes about-subtitle-reveal {
   from {
     opacity: 0;
@@ -549,14 +542,29 @@ main {
 
 .pagina-servicios main {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .pagina-servicios main ul {
   list-style: none;
+}
+.pagina-servicios main > .seccion-contenedor {
+  grid-column: 1/-1;
 }
 .pagina-servicios main > .card {
   align-self: center;
   width: min(18rem, 100%);
   margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .pagina-servicios main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pagina-servicios main > .card {
+    align-self: stretch;
+    width: 100%;
+    margin-inline: 0;
+  }
 }
 .pagina-servicios .seccion-contenedor article > .titulo-secundario {
   margin-bottom: 5rem;
@@ -590,45 +598,54 @@ main {
 }
 
 .pagina-inicio main {
-  text-align: center;
+  text-align: left;
 }
-.pagina-inicio main .seccion-contenedor.seccion-presentacion-inicio {
+.pagina-inicio .inicio-grid {
   display: grid;
-  grid-template-areas: "titulo" "foto" "texto1" "texto2";
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
 }
-.pagina-inicio main .seccion-presentacion-inicio > .titulo-secundario {
-  grid-area: titulo;
-  text-align: center;
+@media (min-width: 992px) {
+  .pagina-inicio .inicio-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
 }
-.pagina-inicio main .seccion-presentacion-inicio > .foto-presentacion {
-  grid-area: foto;
-  justify-self: center;
-}
-.pagina-inicio main .seccion-presentacion-inicio > div {
-  display: contents;
-}
-.pagina-inicio main .seccion-presentacion-inicio > div > p:nth-of-type(1) {
-  grid-area: texto1;
-}
-.pagina-inicio main .seccion-presentacion-inicio > div > p:nth-of-type(2) {
-  grid-area: texto2;
-}
-.pagina-inicio .seccion-contenedor {
-  text-align: center;
-}
-.pagina-inicio .seccion-servicios-inicio {
-  text-align: center;
+.pagina-inicio .seccion-presentacion-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
 }
 .pagina-inicio .seccion-presentacion-inicio > .titulo-secundario {
+  align-self: center;
+  margin: 0;
   text-align: center;
 }
-.pagina-inicio .seccion-presentacion-inicio > div > p {
+.pagina-inicio .seccion-presentacion-inicio .texto-presentacion-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   text-align: center;
 }
-.pagina-inicio .seccion-presentacion-inicio > .foto-presentacion {
+.pagina-inicio .seccion-presentacion-inicio .texto-presentacion-inicio > p:first-child {
+  font-size: 1rem;
+}
+.pagina-inicio .foto-presentacion {
   width: min(48%, 18rem);
+  margin: 0;
+  justify-self: start;
+}
+.pagina-inicio .foto-presentacion > img {
+  width: 40%;
   margin-inline: auto;
+}
+@media (min-width: 992px) {
+  .pagina-inicio .foto-presentacion {
+    width: 100%;
+    max-width: none;
+  }
 }
 .pagina-inicio .foto-presentacion figcaption {
   text-align: center;
@@ -694,14 +711,20 @@ main {
 .seccion-servicios-inicio {
   align-self: stretch;
   width: 100%;
-  order: 2;
-  text-align: center;
+  min-width: 0;
+  text-align: left;
 }
 .seccion-servicios-inicio article {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 0;
+  text-align: center;
+}
+.seccion-servicios-inicio article > .titulo-secundario {
+  align-self: center;
+  margin: 0;
+  text-align: center;
 }
 .seccion-servicios-inicio ul {
   display: flex;
@@ -712,6 +735,9 @@ main {
 }
 .seccion-servicios-inicio li {
   font-weight: 400;
+}
+.seccion-servicios-inicio li > .titulo-secundario {
+  font-size: 0.875rem;
 }
 
 .seccion-presentacion-inicio {
@@ -1107,6 +1133,11 @@ button:active {
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .pagina-servicios .card > div {
+    flex: 1;
+  }
 }
 .pagina-servicios .card .btn-primary {
   align-self: center;

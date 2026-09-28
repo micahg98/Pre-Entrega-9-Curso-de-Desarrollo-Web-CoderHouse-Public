@@ -112,16 +112,6 @@ main {
   }
 }
 
-.pagina-inicio main {
-  .titulo-secundario {
-    animation: home-title-reveal $home-title-animation-duration $animation-easing both;
-  }
-
-  .seccion-servicios-inicio .titulo-secundario {
-    animation-delay: $home-title-delay;
-  }
-}
-
 @keyframes about-subtitle-reveal {
   from {
     opacity: 0;
