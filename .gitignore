@@ -17,3 +17,4 @@ build/
 *.bak
 *.tmp
 *~
+.vercel

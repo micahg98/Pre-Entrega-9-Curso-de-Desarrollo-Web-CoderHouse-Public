@@ -84,7 +84,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: $color-carousel-background;
+    background-color: $color-white;
   }
 
   .carousel-item {
@@ -138,8 +138,8 @@
     width: $carousel-icon-size;
     height: $carousel-icon-size;
     background-image: none;
-    border-top: $carousel-icon-border-width solid $color-white;
-    border-right: $carousel-icon-border-width solid $color-white;
+    border-top: $carousel-icon-border-width solid $color-purple;
+    border-right: $carousel-icon-border-width solid $color-purple;
   }
 
   .carousel-control-prev-icon {
@@ -174,7 +174,7 @@
       border: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      background-color: $color-white;
+      background-color: $color-purple;
       background-clip: padding-box;
       text-indent: -999px;
       cursor: pointer;
@@ -240,34 +240,35 @@
         flex: 1;
       }
     }
+  }
+}
 
-    .btn-primary {
-      align-self: center;
-      background-color: $color-purple;
-      border-color: $color-purple;
-      border-radius: $button-radius;
-      color: $color-white;
-      padding-inline: $button-inline-padding;
-      width: fit-content;
-      @include interactive-transition(color, background-color, border-color, box-shadow, transform, font-weight);
+.btn-primary {
+  align-self: center;
+  background-color: $color-purple;
+  border-color: $color-purple;
+  border-radius: $button-radius;
+  color: $color-white;
+  padding-inline: $button-inline-padding;
+  text-decoration: none;
+  width: fit-content;
+  @include interactive-transition(color, background-color, border-color, box-shadow, transform, font-weight);
 
-      &:hover {
-        background-color: $color-white;
-        border-color: $color-purple;
-        color: $color-purple;
-        box-shadow: $button-hover-shadow;
-        text-decoration: none;
-        text-underline-offset: $underline-offset;
-        transform: translateY($hover-lift) scale($button-hover-scale);
-      }
+  &:hover {
+    background-color: $color-white;
+    border-color: $color-purple;
+    color: $color-purple;
+    box-shadow: $button-hover-shadow;
+    text-decoration: none;
+    text-underline-offset: $underline-offset;
+    transform: translateY($hover-lift) scale($button-hover-scale);
+  }
 
-      &:active {
-        background-color: $color-purple;
-        border-color: $color-purple;
-        color: $color-active;
-        font-weight: $font-weight-semibold;
-        transform: translateY(0);
-      }
-    }
+  &:active {
+    background-color: $color-purple;
+    border-color: $color-purple;
+    color: $color-active;
+    font-weight: $font-weight-semibold;
+    transform: translateY(0);
   }
 }

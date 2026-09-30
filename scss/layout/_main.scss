@@ -86,6 +86,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: $space-3xl;
+    align-items: start;
 
     @media (min-width: $breakpoint-desktop) {
       grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) minmax(0, 1fr);
@@ -99,6 +100,7 @@
     flex-direction: column;
     gap: $space-lg;
     min-width: 0;
+    align-self: start;
 
     > .titulo-secundario {
       align-self: center;
@@ -120,6 +122,7 @@
     width: min($presentation-image-home-width, $presentation-image-home-max-width);
     margin: 0;
     justify-self: start;
+    align-self: start;
 
     > img {
       width: 40%;
@@ -187,7 +190,7 @@ main {
 }
 
 .seccion-servicios-inicio {
-  align-self: stretch;
+  align-self: start;
   width: 100%;
   min-width: 0;
   text-align: left;
@@ -204,6 +207,10 @@ main {
       margin: 0;
       text-align: center;
     }
+
+    > .btn {
+      align-self: center;
+    }
   }
 
   ul {
@@ -218,10 +225,13 @@ main {
     font-weight: $font-weight-card;
 
     > .titulo-secundario { font-size: $font-size-tertiary; }
+
+    > .bi {
+      color: $color-purple;
+      margin-right: $space-xs;
+    }
   }
 }
-
-.seccion-presentacion-inicio { order: 1; text-align: center; }
 
 .seccion-sobre-mi {
   align-items: center;
