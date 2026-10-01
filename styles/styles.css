@@ -24,12 +24,6 @@ body {
   color: #6e2aad;
 }
 
-.subtitulo-presentacion {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #6e2aad;
-}
-
 .pagina-servicios .seccion-contenedor article .titulo-terciario {
   font-size: 0.875rem;
   font-weight: 600;
@@ -358,19 +352,12 @@ main {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 1rem;
-  min-height: 180px;
-  background-color: #f4f4f4;
-  background-image: url("../images/fondo-header.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .header-principal .navbar,
 .header-principal .navbar .container-fluid,
 .header-principal .offcanvas {
-  background-color: transparent;
+  background-color: #ffffff;
 }
 @media (max-width: 991px) {
   .header-principal .offcanvas:not(.show) {
@@ -394,7 +381,7 @@ main {
     position: static;
     visibility: visible;
     transform: none;
-    background-color: transparent;
+    background-color: #ffffff;
     border: 0;
   }
   .header-principal .offcanvas-header {
@@ -403,21 +390,17 @@ main {
   .header-principal .offcanvas-body {
     display: flex;
     padding: 0;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-  .header-principal {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-  .header-principal nav {
-    flex: 0 0 auto;
   }
 }
 @media (min-width: 992px) {
   .header-principal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 3rem;
+  }
+  .header-principal nav {
+    flex: 0 0 auto;
   }
 }
 
@@ -443,13 +426,12 @@ main {
   padding-left: 0;
   list-style: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .menu-navegacion {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0.85rem;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -457,13 +439,13 @@ main {
   font-size: 0.8rem;
   white-space: nowrap;
   font-weight: 600;
-  color: #ffffff;
+  color: #6e2aad;
   text-decoration: none;
   padding: 0.25rem 0;
   transition: color 0.35s ease, background-color 0.35s ease, font-weight 0.35s ease, text-shadow 0.35s ease;
 }
 .enlace-navegacion:hover {
-  color: #ffffff;
+  color: #6e2aad;
   text-decoration: underline;
   text-underline-offset: 0.15em;
   text-shadow: 0 0 0.5rem rgba(110, 42, 173, 0.35);
@@ -622,7 +604,6 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
-  align-items: start;
 }
 @media (min-width: 992px) {
   .pagina-inicio .inicio-grid {
@@ -636,7 +617,6 @@ main {
   flex-direction: column;
   gap: 1rem;
   min-width: 0;
-  align-self: start;
 }
 .pagina-inicio .seccion-presentacion-inicio > .titulo-secundario {
   align-self: center;
@@ -656,7 +636,6 @@ main {
   width: min(48%, 18rem);
   margin: 0;
   justify-self: start;
-  align-self: start;
 }
 .pagina-inicio .foto-presentacion > img {
   width: 40%;
@@ -730,7 +709,7 @@ main {
 }
 
 .seccion-servicios-inicio {
-  align-self: start;
+  align-self: stretch;
   width: 100%;
   min-width: 0;
   text-align: left;
@@ -747,9 +726,6 @@ main {
   margin: 0;
   text-align: center;
 }
-.seccion-servicios-inicio article > .btn {
-  align-self: center;
-}
 .seccion-servicios-inicio ul {
   display: flex;
   flex-direction: column;
@@ -763,9 +739,10 @@ main {
 .seccion-servicios-inicio li > .titulo-secundario {
   font-size: 0.875rem;
 }
-.seccion-servicios-inicio li > .bi {
-  color: #6e2aad;
-  margin-right: 0.25rem;
+
+.seccion-presentacion-inicio {
+  order: 1;
+  text-align: center;
 }
 
 .seccion-sobre-mi {
@@ -1024,7 +1001,7 @@ button:active {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: #cdb4db;
 }
 .carrusel-proyecto .carousel-item {
   display: none;
@@ -1072,8 +1049,8 @@ button:active {
   width: 2rem;
   height: 2rem;
   background-image: none;
-  border-top: 0.15rem solid #6e2aad;
-  border-right: 0.15rem solid #6e2aad;
+  border-top: 0.15rem solid #ffffff;
+  border-right: 0.15rem solid #ffffff;
 }
 .carrusel-proyecto .carousel-control-prev-icon {
   transform: rotate(-135deg);
@@ -1105,7 +1082,7 @@ button:active {
   border: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  background-color: #6e2aad;
+  background-color: #ffffff;
   background-clip: padding-box;
   text-indent: -999px;
   cursor: pointer;
@@ -1162,19 +1139,17 @@ button:active {
     flex: 1;
   }
 }
-
-.btn-primary {
+.pagina-servicios .card .btn-primary {
   align-self: center;
   background-color: #6e2aad;
   border-color: #6e2aad;
   border-radius: 0.375rem;
   color: #ffffff;
   padding-inline: 1rem;
-  text-decoration: none;
   width: fit-content;
   transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease, font-weight 0.35s ease;
 }
-.btn-primary:hover {
+.pagina-servicios .card .btn-primary:hover {
   background-color: #ffffff;
   border-color: #6e2aad;
   color: #6e2aad;
@@ -1183,7 +1158,7 @@ button:active {
   text-underline-offset: 0.15em;
   transform: translateY(-1px) scale(1.03);
 }
-.btn-primary:active {
+.pagina-servicios .card .btn-primary:active {
   background-color: #6e2aad;
   border-color: #6e2aad;
   color: hsl(164, 95%, 25%);

@@ -4,19 +4,12 @@
   padding: $space-xl;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: $space-lg;
-  min-height: 180px;
-  background-color: $color-light-gray;
-  background-image: url("../images/fondo-header.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
 
   .navbar,
   .navbar .container-fluid,
   .offcanvas {
-    background-color: transparent;
+    background-color: $color-white;
   }
 
   @media (max-width: ($breakpoint-desktop - 1px)) {
@@ -43,21 +36,20 @@
       position: static;
       visibility: visible;
       transform: none;
-      background-color: transparent;
+      background-color: $color-white;
       border: 0;
     }
     .offcanvas-header { display: none; }
-    .offcanvas-body { display: flex; padding: 0; justify-content: flex-end; align-items: flex-end; }
-
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    nav { flex: 0 0 auto; }
+    .offcanvas-body { display: flex; padding: 0; }
   }
 
   @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: $space-2xl $space-5xl;
+
+    nav { flex: 0 0 auto; }
   }
 }
 

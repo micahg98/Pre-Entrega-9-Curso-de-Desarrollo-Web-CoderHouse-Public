@@ -11,12 +11,11 @@
   padding-left: 0;
   list-style: none;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: $nav-desktop-gap;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -24,13 +23,13 @@
   font-size: $font-size-nav;
   white-space: nowrap;
   font-weight: $font-weight-semibold;
-  color: $color-white;
+  color: $color-purple;
   text-decoration: none;
   padding: $space-xs 0;
   @include interactive-transition(color, background-color, font-weight, text-shadow);
 
   &:hover {
-    color: $color-white;
+    color: $color-purple;
     text-decoration: underline;
     text-underline-offset: $underline-offset;
     text-shadow: $nav-link-shadow-hover;
